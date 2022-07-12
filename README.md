@@ -57,7 +57,7 @@ infl = compute_influences.batch_calculate_influence(dl, len(val_labels), 1000, d
 ```
 
 ## Running counterfactual experiment
-Once influences have been computed, we can now run counterfactual experiments by removing top or bottom influencing classes and run transfer learning again. This can be done by running:
+Once influences have been computed, we can now run counterfactual experiments by removing top or bottom influencing classes from the source dataset (ImageNet), and then applying transfer learning again. This can be done by running:
 ```
 python src/counterfactuals_main.py\
             --config-file configs/base_config.yaml\
