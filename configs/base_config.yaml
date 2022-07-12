@@ -1,0 +1,56 @@
+training:
+  num_workers: 10
+  batch_size: 1024
+  exp_name: ''
+  transfer_task: FIXED
+  epochs: 16
+  lr: 0.5
+  weight_decay: 0.00005
+  momentum: 0.9
+  lr_scheduler: cyclic
+  step_size: 30
+  lr_milestones: 20,25
+  lr_peak_epoch: 2
+  gamma: 0.1
+  label_smoothing: 0.0
+  disable_logging: True
+  supercloud: True #False
+  decoder: random_resized_crop
+  granularity: global
+#   data_root: /mnt/cfs/datasets/transfer_datasets
+  data_root: /home/gridsan/groups/robustness/datasets/ffcv_datasets
+logging:
+  do_if_complete: False
+  mmap_logdir: ""
+model:
+  arch: resnet18
+  pretrained: False
+  id_dir: /mnt/nfs/home/siraj/extracted/model_ids.pt
+  checkpoint_dir: /mnt/nfs/home/siraj/checkpoints
+resolution:
+  min_res: 160
+  max_res: 192
+  start_ramp: 11
+  end_ramp: 13
+  val_res: 224
+data:
+  dataset: imagenet
+  train_path: torch_imagenet/imagenet_train.beton
+  val_path: torch_imagenet/imagenet_val.beton
+  num_classes: 500
+  exclude_file: ""
+out:
+  output_pkl_dir: output_pkl
+transfer_configs:
+  aircraft: configs/aircraft_config.yaml
+  birdsnap: configs/birdsnap_config.yaml
+  caltech101: configs/caltech101_config.yaml
+  caltech256: configs/caltech256_config.yaml
+  cifar10: configs/cifar10_config.yaml
+  cifar100: configs/cifar100_config.yaml
+  flowers: configs/flowers_config.yaml
+  food: configs/food_config.yaml
+  imagenet: configs/imagenet_config.yaml
+  pets: configs/pets_config.yaml
+  stanford_cars: configs/stanford_cars_config.yaml
+  SUN397: configs/SUN397_config.yaml

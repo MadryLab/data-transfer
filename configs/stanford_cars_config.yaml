@@ -1,0 +1,21 @@
+transfer_data:
+  transfer_dataset: STANFORD_CARS
+  transfer_path_train: stanford_cars/stanford_cars_train.beton
+  transfer_path_val: stanford_cars/stanford_cars_test.beton
+transfer_training:
+  transfer_ffcv: True
+  upsample: False
+  decoder_train: random_resized_crop
+  decoder_val: center_crop_256
+  transfer_epochs: 50
+  transfer_lr: 0.3
+  transfer_weight_decay: 0.0005
+  transfer_momentum: 0.9
+  transfer_lr_scheduler: cyclic
+  transfer_step_size: 10
+  transfer_gamma: 0.1
+  transfer_label_smoothing: 0.0
+  transfer_lr_milestones: ""
+  transfer_lr_peak_epoch: 5
+  transfer_granularity: global
+  transfer_eval_epochs: 100

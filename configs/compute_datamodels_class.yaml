@@ -1,0 +1,12 @@
+data:
+  pct: 0.5
+  data_path: /mnt/cfs/projects/data-transfer/class_based_dm/models_2_20_22_50_percenters_summaries/CIFAR10/fixed/regression_data.beton
+  num_train: 6000
+  num_val: 1540
+  split: test
+cfg:
+  lr: 1e-6
+  k: 50
+  batch_size: 256
+  out_dir: /mnt/cfs/projects/data-transfer/class_based_dm/models_2_20_22_50_percenters_summaries/CIFAR10/fixed
+  num_workers: 7

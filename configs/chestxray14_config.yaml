@@ -1,0 +1,21 @@
+transfer_data:
+  transfer_dataset: CHESTXRAY14
+  transfer_path_train: chestxray14/chestxray14_train.beton
+  transfer_path_val: chestxray14/chestxray14_test.beton
+transfer_training:
+  transfer_ffcv: True
+  upsample: False
+  decoder_train: center_crop_256
+  decoder_val: center_crop_256
+  transfer_epochs: 4
+  transfer_lr: 0.01
+  transfer_weight_decay: 0.00001
+  transfer_momentum: 0.9
+  transfer_lr_scheduler: steplr
+  transfer_step_size: 5
+  transfer_gamma: 0.1
+  transfer_label_smoothing: 0.0
+  transfer_lr_milestones: ""
+  transfer_lr_peak_epoch: 5
+  transfer_granularity: per_class
+  transfer_eval_epochs: 100

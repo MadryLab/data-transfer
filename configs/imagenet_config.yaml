@@ -1,0 +1,18 @@
+transfer_data:
+  transfer_dataset: IMAGENET
+  transfer_path_train: torch_imagenet/imagenet_train.beton
+  transfer_path_val: torch_imagenet/imagenet_val.beton
+transfer_training:
+  transfer_ffcv: True
+  transfer_epochs: 15
+  transfer_lr: 0.01
+  transfer_weight_decay: 0.0005
+  transfer_momentum: 0.9
+  transfer_lr_scheduler: steplr
+  transfer_step_size: 10
+  transfer_gamma: 0.1
+  transfer_label_smoothing: 0.0
+  transfer_lr_milestones: ""
+  transfer_lr_peak_epoch: 5
+  transfer_granularity: global
+  transfer_eval_epochs: 100

@@ -1,0 +1,12 @@
+data:
+  pct: 0.5
+  data_path: /mnt/cfs/projects/data-transfer/results/examplebased_3_5_22/cifar10/fixed/clean/raw_margins/regression_data.beton
+  num_train: 45000
+  num_val: 5000
+  split: test
+cfg:
+  lr: 0.0001
+  k: 50
+  batch_size: 512
+  out_dir: /mnt/cfs/projects/data-transfer/results/examplebased_3_5_22/cifar10/fixed/clean/raw_margins
+  num_workers: 7
