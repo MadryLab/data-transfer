@@ -4,7 +4,7 @@ This repository contains the code of our paper:
 
 **A Data-Based Perspective on Transfer Learning** </br>
 *Saachi Jain\*, Hadi Salman\*, Alaa Khaddaj\*, Eric Wong, Sung Min Park, Aleksander Madry*  <br>
-[Paper](https://arxiv.org/abs/2207.02842) - [Blog post](http://gradientscience.org/bias-transfer/)
+[Paper](TODO) - [Blog post](http://gradientscience.org/data-transfer/)
 
 
 ```bibtex
