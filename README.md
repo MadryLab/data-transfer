@@ -42,13 +42,14 @@ python src/train_imagenet_class_subset.py \
                         --out.output_pkl_dir $OUTDIR
 
 ```
-where `$OUTDIR` is the output directory of your choice, and `$PATH_TO_DATASETS` is the path where the datasets exists (see next section).
+where `$OUTDIR` is the output directory of your choice, and `$PATH_TO_DATASETS` is the path where the datasets exists (see below).
 
 The config file `configs/base_config.yaml` contains all the hyperparameters needed for this experiment. For example, you can specify which downstream tasks you want to transfer to, or how many Imagenet class to train on the source model.
 
 ## Calculating influences
-Use `analysis/data_compressors/2_20_compressor.py` to compress model results into a summary file. Then use `analysis/compute_influences.py` to compute the influences.
-```
+Use `analysis/data_compressors/2_20_compressor.py` to compress model results into a summary file. Then use `analysis/compute_influences.py` to compute the influences. In a notebook, simply run the following code:
+
+```python
 sf = <SUMMARY FILE FOLDER>
 ds = compute_influences.SummaryFileDataSet(sf, dataset, INFLUENCE_KEY, keyword)
 dl = torch.utils.data.DataLoader(ds, batch_size=1024, shuffle=False, drop_last=False)
@@ -56,6 +57,7 @@ infl = compute_influences.batch_calculate_influence(dl, len(val_labels), 1000, d
 ```
 
 ## Running counterfactual experiment
+Once influences have been computed, we can now run counterfactual experiments by removing top or bottom influencing classes and run transfer learning again. This can be done by running:
 ```
 python src/counterfactuals_main.py\
             --config-file configs/base_config.yaml\
@@ -65,9 +67,9 @@ python src/counterfactuals_main.py\
             --counterfactual.cf_infl_order_file ${INFL_ORDER_FILE} \
             --data.num_classes -1 \
             --counterfactual.cf_order TOP \
-            --counterfactual.cf_num_classes_min $MIN_STEPS \
-            --counterfactual.cf_num_classes_max $MAX_STEPS \
-            --counterfactual.cf_num_classes_step $STEP_SIZE \
+            --counterfactual.cf_num_classes_min ${MIN_STEPS} \
+            --counterfactual.cf_num_classes_max ${MAX_STEPS} \
+            --counterfactual.cf_num_classes_step ${STEP_SIZE} \
             --counterfactual.cf_type CLASS
 ```
 
