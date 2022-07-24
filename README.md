@@ -4,15 +4,15 @@ This repository contains the code of our paper:
 
 **A Data-Based Perspective on Transfer Learning** </br>
 *Saachi Jain\*, Hadi Salman\*, Alaa Khaddaj\*, Eric Wong, Sung Min Park, Aleksander Madry*  <br>
-[Paper](TODO) - [Blog post](http://gradientscience.org/data-transfer/)
+[Paper](https://arxiv.org/abs/2207.05739) - [Blog post](http://gradientscience.org/data-transfer/)
 
 
 ```bibtex
-@InProceedings{jain2022transfer,
-    title={A Data-Based Perspective on Transfer Learning},
-    author={Saachi Jain and Hadi Salman and Alaa Khaddaj and Eric Wong and Sung Min Park and Aleksander Madry},
-    year={2022},
-    booktitle={ArXiv preprint arXiv:XXXXX}
+@article{jain2022data,
+  title={A Data-Based Perspective on Transfer Learning},
+  author={Jain, Saachi and Salman, Hadi and Khaddaj, Alaa and Wong, Eric and Park, Sung Min and Madry, Aleksander},
+  journal={arXiv preprint arXiv:2207.05739},
+  year={2022}
 }
 ```
 
